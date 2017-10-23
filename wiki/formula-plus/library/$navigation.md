@@ -18,5 +18,7 @@
     - [7-P_TEXTJOIN](?file=002-函数说明/01-文本函数/007-7-P_TEXTJOIN "7-P_TEXTJOIN")
     - [8-P_RMB](?file=002-函数说明/01-文本函数/008-8-P_RMB "8-P_RMB")
     - [9-P_PINYIN](?file=002-函数说明/01-文本函数/009-9-P_PINYIN "9-P_PINYIN")
+    - [10-P_SHOUZIMU](?file=002-函数说明/01-文本函数/010-10-P_SHOUZIMU "10-P_SHOUZIMU")
 - **查找函数**
     - [P_LOOKUP](?file=002-函数说明/02-查找函数/001-P_LOOKUP "P_LOOKUP")
+    - [P_INDEX](?file=002-函数说明/02-查找函数/002-P_INDEX "P_INDEX")
