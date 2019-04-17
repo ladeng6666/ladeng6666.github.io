@@ -1,0 +1,295 @@
+#write{
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px 30px 40px 30px;
+    padding-top: 20px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+/*
+ * NOTE:
+ * - The use of browser-specific styles (-moz-, -webkit-) should be avoided.
+ *   If used, they may not render correctly for people reading the email in
+ *   a different browser than the one from which the email was sent.
+ * - The use of state-dependent styles (like a:hover) don't work because they
+ *   don't match at the time the styles are made explicit. (In email, styles
+ *   must be explicitly applied to all elements -- stylesheets get stripped.)
+ */
+
+/* This is the overall wrapper, it should be treated as the `body` section. */
+html,body{
+max-with: 500px;
+}
+.markdown-here-wrapper {
+padding: 0 20px;
+
+}
+
+/* To add site specific rules, you can use the `data-md-url` attribute that we
+   add to the wrapper element. Note that rules like this are used depending
+   on the URL you're *sending* from, not the URL where the recipient views it.
+*/
+/* .markdown-here-wrapper[data-md-url*="mail.yahoo."] ul { color: red; } */
+
+
+/* In edit mode, Wordpress uses a `* { font: ...;} rule+style that makes highlighted
+code look non-monospace. This rule will override it. */
+.markdown-here-wrapper[data-md-url*="wordpress."] code span {
+  font: inherit;
+}
+
+/* Wordpress adds a grey background to `pre` elements that doesn't go well with
+our syntax highlighting. */
+.markdown-here-wrapper[data-md-url*="wordpress."] pre {
+  background-color: transparent;
+}
+
+/* This spacing has been tweaked to closely match Gmail+Chrome "paragraph" (two line breaks) spacing.
+Note that we only use a top margin and not a bottom margin -- this prevents the
+"blank line" look at the top of the email (issue #243).
+*/
+/* 正文 2017-04-26修改 */
+p {
+  /* !important is needed here because Hotmail/Outlook.com uses !important to
+     kill the margin in <p>. We need this to win. */
+  margin: 15px 0 0 0 !important;
+  line-height: 1.75em;
+  color: #3f3f3f;
+  font-size:15px;
+  text-align: justify;
+  display: block;
+}
+
+table,  dl, blockquote, q, ul, ol {
+  margin: 1.2em 0;
+  font-size: 14px;
+  color: #3f3f3f;
+}
+/*序列*/
+ul, ol {
+  padding-left: 2em;
+}
+
+li {
+  margin: 0em 0;
+  color: #3f3f3f;
+}
+
+/* Space paragraphs in a list the same as the list itself. */
+li p {
+  /* Needs !important to override rule above. */
+  margin: 0em 0 !important;
+  font-size:14px;
+}
+
+/* Smaller spacing for sub-lists */
+ul ul, ul ol, ol ul, ol ol {
+  margin: 0;
+  padding-left: 1em;
+}
+
+/* Use Roman numerals for sub-ordered-lists. (Like Github.) */
+ol ol, ul ol {
+  list-style-type: lower-roman;
+}
+
+/* Use letters for sub-sub-ordered lists. (Like Github.) */
+ul ul ol, ul ol ol, ol ul ol, ol ol ol {
+  list-style-type: lower-alpha;
+}
+/*表格*/
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 1em;
+  font-weight: bold;
+  font-style: italic;
+}
+
+dl dd {
+  margin: 0 0 1em;
+  padding: 0 1em;
+}
+
+/*引用 2017-04-26 */
+blockquote, q {
+  /*border-left: 5px solid #DDD;*/
+  border: none !important;
+  display: block;
+  padding: 8px 40px 8px 40px;
+  color: #777;
+  quotes: none;
+  background-color: rgb(250,250,250);
+  text-align: justify-all;
+}
+blockquote p{
+  /*margin:0 0 !important;*/
+  font-size: 14px;
+  margin: 8px 0px !important;
+  color: #888;
+}
+blockquote::before, blockquote::after, q::before, q::after {
+  content: none;
+}
+
+h2, h3, h4, h5, h6 {
+  margin: 1.3em 0 1em;
+  padding: 0;
+  font-weight: bold;
+  color: #777;
+}
+h1 {
+  font-size: 24px;
+  /*border-bottom: 1px solid #ddd;*/
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 0;
+  font-weight: bold;
+  color: #006341;
+  text-align: center;
+}
+
+h2 {
+  font-size: 18px;
+  /*border-bottom: 1px solid #eee;*/
+  border-left: 4px solid #404040;
+  background: #F9F7F8;
+  border-radius:2px;
+  padding: 0.2em 0.5em;
+  margin: 30px 0 30px 0;
+  color: #404040;
+}
+
+h3 {
+  font-size: 16px;
+  color: #404040;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+h6 {
+  font-size: 16px;
+  color: #777;
+}
+
+table {
+  padding: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 1em;
+  font: inherit;
+  border: 0;
+}
+
+tbody {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+table tr {
+  border: 0;
+  border-top: 1px solid #CCC;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+table tr:nth-child(2n) {
+  background-color: #F8F8F8;
+}
+
+table tr th, table tr td {
+  font-size: 1em;
+  border: 1px solid #CCC;
+  margin: 0;
+  padding: 0.5em 1em;
+}
+
+table tr th {
+ font-weight: bold;
+  background-color: #F0F0F0;
+}
+/*edit by ladeng*/
+strong{
+	/*color: #404040;*/
+	color:#006347;
+  padding: 0px 4px;
+  background-color: #DEEDE2;
+  /*display: inline-block;*/
+  margin: 0px 6px;
+}
+a{
+ color:blue;
+}
+/*code{
+    color: #006341;
+    background-color: #B2D0C6;
+    border: 1px solid #F0D1D4;
+    margin: 1.2em 0px;
+    padding:4px;
+    font-size: 15px;
+}*/
+
+pre{
+    color: #ABABAB;
+    /*background-color: #F9F9F9 !important;*/
+    /*border: 2px solid #C5E0B4;*/
+    /*margin: 4px 0 !important;*/
+    /*padding: 4px !important;*/
+    font-size: 14px !important;
+    border-radius:2px;
+    word-wrap: break-word;
+}
+
+.md-fences{
+  margin: 1em 2em;
+  padding: 1em;
+}
+img{
+	text-align: center;
+	max-width:90%;
+  padding: 5px;
+  border: 1px #eee solid;
+  /*margin: -10px;*/
+}
+em{
+  width: 100%;
+  text-align: center;
+  font-style: normal;
+  color: #777;
+  margin: 0px auto !important;
+  padding: 0px;
+  font-size: 14px !important;
+  display: block;
+}
+/*u{
+  border-bottom: 1px solid #333;
+  border-top: 1px solid #333;
+  text-decoration: none;
+  padding: 4px 0;
+  text-align: center;
+}*/
+u{
+  text-decoration: none !important;
+  font-weight: bold;
+  padding: 6px;
+}
+u span:before{
+  content: '「';
+}
+u span:after{
+  content: '」';
+}
